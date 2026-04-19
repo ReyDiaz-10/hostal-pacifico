@@ -8,24 +8,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
+        /* RESET */
         *{margin:0;padding:0;box-sizing:border-box;}
 
         body {
             font-family: 'Arial Black', sans-serif;
-            background-color: #9eb196 !important; 
+            /* FONDO SAGE CON PALMERAS SUTILES DE FONDO */
+            background-color: #9eb196; 
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="10" y="50" font-size="30" opacity="0.1">🌴</text><text x="70" y="80" font-size="25" opacity="0.1">🌴</text></svg>');
             text-align: center;
             color: #433428;
             overflow-x: hidden;
         }
 
-        /* HEADER */
-        .header { padding: 40px 20px 10px; }
+        /* HEADER INTEGRADO A LO ANCHO */
+        .header {
+            padding: 30px 10px 10px;
+            background: transparent; /* Sin fondo, integrado */
+        }
+
         .logo-img {
-            width: 280px; 
-            max-width: 80%;
+            width: 100%; /* A lo ancho total */
+            max-width: 900px; /* Limitador para pantallas grandes */
             height: auto;
-            margin-bottom: 10px;
-            filter: drop-shadow(4px 4px 10px rgba(0,0,0,0.2));
+            display: block;
+            margin: 0 auto;
+            /* ELIMINADOS BORDES Y SOMBRAS DE SOBREPUESTO */
+            border: none;
+            box-shadow: none;
+            filter: none;
         }
 
         /* SLIDER AUTOMÁTICO */
@@ -51,27 +62,45 @@
         }
         .slider-box img.active { opacity: 1; z-index: 1; }
 
-        /* SERVICIOS */
+        /* SERVICIOS - PANEL MENTA RECUPERADO */
         .servicios {
-            background: #c5e1d4 !important; 
+            background-color: #c5e1d4 !important; /* VERDE MENTA PASTEL */
             margin: 20px;
             padding: 40px 20px;
             border-radius: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
-        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .item { width: 115px; }
-        .item i { font-size: 40px; margin-bottom: 10px; filter: drop-shadow(3px 4px 3px rgba(0,0,0,0.2)); }
-        .item p { font-weight: bold; font-size: 14px; }
-        .item small { font-size: 11px; opacity: 0.8; }
 
-        /* TEXTOS FINALES */
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        
+        .item { width: 115px; }
+        
+        /* ICONOS CON COLORES LLAMATIVOS DIFERENCIADOS */
+        .item i { 
+            font-size: 45px; 
+            margin-bottom: 12px; 
+            filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.2)); 
+        }
+
+        /* Paleta de colores vibrantes para cada icono */
+        .item:nth-child(1) i { color: #00bcd4; } /* Wifi - Turquesa */
+        .item:nth-child(2) i { color: #4caf50; } /* Baño - Verde Loro */
+        .item:nth-child(3) i { color: #ff5722; } /* Cocina - Naranja Coral */
+        .item:nth-child(4) i { color: #ffeb3b; } /* Trabajo - Amarillo Sol */
+        .item:nth-child(5) i { color: #2196f3; } /* Seguridad - Azul Marino */
+        .item:nth-child(6) i { color: #9c27b0; } /* TV - Púrpura Tropical */
+
+        .item p { font-weight: bold; font-size: 14px; color: #433428; }
+        .item small { font-size: 11px; opacity: 0.8; color: #433428; }
+
+        /* TEXTOS Y BOTONES FINALES */
         .info-reserva {
             padding: 20px;
             font-size: 16px;
             line-height: 1.5;
             max-width: 600px;
             margin: 0 auto;
+            color: #433428;
         }
 
         .btn-airbnb {
@@ -86,13 +115,8 @@
             box-shadow: 0 10px 20px rgba(255, 90, 95, 0.4);
         }
 
-        .horario-atencion {
-            font-weight: bold;
-            margin: 15px 0;
-            color: #433428;
-        }
-
-        .direccion { font-size: 17px; font-weight: bold; margin: 15px 0; }
+        .horario-atencion { font-weight: bold; margin: 15px 0; color: #433428; }
+        .direccion { font-size: 17px; font-weight: bold; margin: 15px 0; color: #433428; }
 
         .social-bar { margin-bottom: 120px; padding-top: 20px; }
         .social-bar a { font-size: 35px; margin: 0 15px; color: #433428; text-decoration: none; }
@@ -112,7 +136,7 @@
 <body>
 
 <div class="header">
-    <img src="logo.jpg" alt="Logo Hostal Pacífico Encanto" class="logo-img">
+    <img src="logo.jpg" alt="Título Hostal Pacífico Encanto" class="logo-img">
 </div>
 
 <div class="slider-box" id="slider">
@@ -127,7 +151,7 @@
 </div>
 
 <div class="servicios">
-    <h2 style="margin-bottom:25px;">Nuestros Servicios</h2>
+    <h2 style="margin-bottom:25px; color:#433428;">Nuestros Servicios</h2>
     <div class="grid">
         <div class="item"><i class="fas fa-wifi"></i><p>Wifi</p><small>Conexión rápida</small></div>
         <div class="item"><i class="fas fa-bath"></i><p>Baño</p><small>Ducha tropical</small></div>
@@ -144,13 +168,8 @@
 
 <a href="https://www.airbnb.com.co/users/profile/1470728514452495329" class="btn-airbnb">Reservar en Airbnb</a>
 
-<div class="horario-atencion">
-    🕒 Horario de atención: 7:00 AM - 10:00 PM
-</div>
-
-<div class="direccion">
-    📍 Calle 65 #48 - 78, La Candelaria, Medellín
-</div>
+<div class="horario-atencion">🕒 Horario de atención: 7:00 AM - 10:00 PM</div>
+<div class="direccion">📍 Calle 65 #48 - 78, La Candelaria, Medellín</div>
 
 <div class="social-bar">
     <a href="https://www.facebook.com/hostalpacificoencanto/"><i class="fab fa-facebook"></i></a>
@@ -162,6 +181,7 @@
 <a href="https://waze.com/ul/hd3478effp" class="btn-flotante waze"><i class="fab fa-waze"></i></a>
 
 <script>
+    // Lógica del Slide Automático
     window.onload = function() {
         const images = document.querySelectorAll('#slider img');
         let current = 0;
