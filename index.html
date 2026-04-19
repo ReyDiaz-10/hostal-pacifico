@@ -4,119 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hostal Pacífico Encanto</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
     <style>
-        :root {
-            --fondo-sage: #9eb196; /* Verde de fondo general */
-            --centro-menta: #c5e1d4; /* Franja pastel central */
-            --texto-marron: #433428; /* Color de letra café oscuro */
-            --verde-ws: #44c35d;
-            --azul-waze: #71c5ee;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--fondo-sage);
-            font-family: 'Arial', sans-serif;
-            color: var(--texto-marron);
+            background-color: #9eb196 !important; /* VERDE SAGE */
+            color: #433428 !important; /* CAFÉ OSCURO */
+            font-family: 'Arial Black', Gadget, sans-serif;
             text-align: center;
         }
 
-        /* DISEÑO DE TÍTULO Y LOGO (BASADO EN TU IMAGEN) */
-        header {
-            padding: 50px 20px;
-        }
+        /* HEADER: TÍTULO CON RELIEVE Y SOMBRAS */
+        .header-section { padding: 50px 10px; }
 
-        .logo-letra-p {
-            font-size: 130px; /* Letra P gigante */
-            font-family: 'Times New Roman', serif;
-            line-height: 0.7;
-            margin-bottom: 5px;
+        .letra-p-gigante {
+            font-size: 160px;
+            font-family: 'Times New Roman', Times, serif;
             display: block;
-            text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+            line-height: 0.5;
+            margin-bottom: 20px;
+            color: #433428;
+            text-shadow: 4px 4px 0px #86967f, 8px 8px 15px rgba(0,0,0,0.2);
         }
 
-        .titulo-principal {
-            font-size: 55px; /* Título grande */
+        .titulo-hostal {
+            font-size: 55px;
             font-weight: 900;
-            text-transform: none;
             letter-spacing: -2px;
-            margin: 0;
-            text-shadow: 
-                2px 2px 0px rgba(0,0,0,0.1), 
-                4px 4px 10px rgba(0,0,0,0.25);
-            animation: suaveMovimiento 5s ease-in-out infinite;
+            color: #433428;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 6px 6px 12px rgba(0,0,0,0.2);
         }
 
-        @keyframes suaveMovimiento {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        /* CONTENEDOR CENTRAL MENTA */
+        .bloque-central {
+            background-color: #c5e1d4 !important; /* VERDE MENTA PASTEL */
+            margin: 20px 5%;
+            padding: 50px 20px;
+            border-radius: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
-        /* CONTENEDOR CENTRAL PASTEL */
-        .seccion-blanca {
-            background-color: var(--centro-menta);
-            margin: 0 5%;
-            padding: 40px 20px;
-            border-radius: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        /* SLIDER DE FOTOS */
-        .slider-box {
+        /* SLIDER */
+        .slider-container {
             width: 100%;
-            max-width: 900px;
+            max-width: 850px;
             height: 450px;
-            margin: 0 auto 30px;
-            border-radius: 20px;
+            margin: 0 auto 40px;
+            border-radius: 30px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .slide-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
+        .slide {
+            width: 100%; height: 100%; object-fit: cover;
+            position: absolute; left: 0; top: 0;
+            opacity: 0; transition: opacity 2s ease-in-out;
+        }
+        .slide.active { opacity: 1; }
+
+        /* SERVICIOS */
+        .servicios-layout {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
         }
 
-        .slide-img.active {
-            opacity: 1;
+        .item-servicio { width: 130px; text-align: center; }
+
+        .item-servicio i {
+            font-size: 50px;
+            margin-bottom: 15px;
+            color: #433428;
+            filter: drop-shadow(3px 5px 3px rgba(0,0,0,0.3));
         }
 
-        /* SERVICIOS CON SOMBRAS */
-        .grid-servicios {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
+        .item-servicio p { font-size: 16px; font-weight: bold; }
 
-        .servicio {
-            padding: 15px;
-        }
-
-        .servicio i {
-            font-size: 45px;
-            margin-bottom: 10px;
-            filter: drop-shadow(3px 4px 4px rgba(0,0,0,0.25)); /* Sombra sutil solicitada */
-        }
-
-        .servicio h4 { margin: 5px 0; }
-        .servicio p { font-size: 12px; margin: 0; opacity: 0.9; }
-
-        /* BOTONES FLOTANTES (DERECHA ABAJO) */
-        .ws-float {
+        /* BOTONES FLOTANTES */
+        .btn-circular {
             position: fixed;
-            bottom: 160px;
-            right: 30px;
-            background-color: var(--verde-ws);
             width: 75px;
             height: 75px;
             border-radius: 50%;
@@ -125,80 +96,58 @@
             justify-content: center;
             color: white;
             font-size: 40px;
-            text-decoration: none;
             box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            animation: floatBtn 3s infinite ease-in-out;
-        }
-
-        @keyframes floatBtn {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        .waze-card {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--azul-waze);
-            width: 270px;
-            padding: 15px;
-            border-radius: 15px;
-            border: 3px solid white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            font-size: 13px;
-            font-weight: bold;
-            color: #003a52;
-            z-index: 1000;
-            text-align: left;
-        }
-
-        .waze-btn {
-            display: block;
-            margin-top: 8px;
-            background: white;
-            padding: 5px;
-            text-align: center;
             text-decoration: none;
-            border-radius: 5px;
-            color: #333;
+            z-index: 10000;
         }
 
-        /* PIE DE PÁGINA */
-        footer {
-            padding: 60px 20px;
-        }
+        .ws-btn { bottom: 120px; right: 30px; background-color: #25d366; }
+        .waze-btn { bottom: 30px; right: 30px; background-color: #33f1ff; }
 
-        .btn-airbnb {
+        /* FOOTER */
+        footer { padding: 40px 20px 120px; }
+
+        .boton-airbnb {
             background-color: #ff5a5f;
             color: white;
-            padding: 18px 35px;
+            padding: 22px 45px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 20px;
             display: inline-block;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(255, 90, 95, 0.4);
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(255, 90, 95, 0.4);
         }
 
-        .redes-sociales a {
-            font-size: 30px;
-            margin: 0 15px;
-            color: var(--texto-marron);
+        .texto-direccion {
+            font-size: 19px;
+            font-weight: bold;
+            color: #433428;
+            margin-bottom: 30px;
+        }
+
+        /* LOS 3 ICONOS SOCIALES */
+        .social-icons a {
+            font-size: 40px;
+            margin: 0 20px;
+            color: #433428;
             text-decoration: none;
+            transition: transform 0.3s;
+            display: inline-block;
         }
-
+        .social-icons a:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
 
-    <header>
-        <span class="logo-letra-p">P</span>
-        <h1 class="titulo-principal">Hostal Pacífico Encanto</h1>
+    <header class="header-section">
+        <span class="letra-p-gigante">P</span>
+        <h1 class="titulo-hostal">Hostal Pacífico Encanto</h1>
     </header>
 
-    <div class="seccion-blanca">
-        <div class="slider-box">
+    <div class="bloque-central">
+        <div class="slider-container">
             <img src="entrada 1.jpg" class="slide-img active">
             <img src="recibidor con muebles.jpg" class="slide-img">
             <img src="baño 1.jpg" class="slide-img">
@@ -209,60 +158,44 @@
             <img src="20A990D1-C7A6-4941-8CA7-5699FF7BB345.JPG" class="slide-img">
         </div>
 
-        <h3>Nuestros Servicios</h3>
-        <div class="grid-servicios">
-            <div class="servicio"><i class="fas fa-wifi"></i><h4>Wifi</h4><p>Conexión Rápida</p></div>
-            <div class="servicio"><i class="fas fa-bath"></i><h4>Baño</h4><p>Ducha Tropical</p></div>
-            <div class="servicio"><i class="fas fa-utensils"></i><h4>Cocina</h4><p>Uso Comunal</p></div>
-            <div class="servicio"><i class="fas fa-laptop"></i><h4>Zona de trabajo</h4><p>Espacio Ergonómico</p></div>
-            <div class="servicio"><i class="fas fa-shield-alt"></i><h4>Seguridad</h4><p>Vigilancia y casilleros</p></div>
-            <div class="servicio"><i class="fas fa-tshirt"></i><h4>Lavandería</h4><p>Para tu comodidad</p></div>
-            <div class="servicio"><i class="fas fa-tv"></i><h4>TV</h4><p>Zonas comunes</p></div>
+        <h2 style="margin-bottom: 30px;">Nuestros Servicios</h2>
+        <div class="servicios-layout">
+            <div class="item-servicio"><i class="fas fa-wifi"></i><p>Wifi</p></div>
+            <div class="item-servicio"><i class="fas fa-bath"></i><p>Baño</p></div>
+            <div class="item-servicio"><i class="fas fa-utensils"></i><p>Cocina</p></div>
+            <div class="item-servicio"><i class="fas fa-laptop"></i><p>Oficina</p></div>
+            <div class="item-servicio"><i class="fas fa-shield-alt"></i><p>Seguro</p></div>
         </div>
     </div>
 
-    <a href="https://w.app/tmdxwn" class="ws-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <div class="waze-card">
-        <i class="fab fa-waze"></i> Calle 65 #48 - 78 La Candelaria - Medellín.<br>
-        <span style="font-weight: normal; font-size: 11px;">Si usas waze a través de este botón nos encuentras con más facilidad.</span>
-        <a href="https://waze.com/ul/hd3478effp" class="waze-btn">IR CON WAZE</a>
-    </div>
+    <a href="https://w.app/tmdxwn" class="btn-circular ws-btn"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://waze.com/ul/hd3478effp" class="btn-circular waze-btn"><i class="fab fa-waze"></i></a>
 
     <footer>
-        <p><strong>Horario de atención:</strong> Todos los días de 7am a 10pm.</p>
-        <p>Si deseas realizar una reserva lo puedes hacer a través de este enlace con airbnb:</p>
+        <a href="https://www.airbnb.com.co/users/profile/1470728514452495329" class="boton-airbnb">Reservar en Airbnb</a>
         
-        <a href="https://www.airbnb.com.co/users/profile/1470728514452495329" class="btn-airbnb">
-            <i class="fab fa-airbnb"></i> Reservar en Airbnb
-        </a>
-
-        <p>Para mayor información u otros tipos de reservas escríbenos por whatsapp</p>
-
-        <div class="redes-sociales">
-            <a href="https://www.facebook.com/hostalpacificoencanto/"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/pacificoencanto/"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.airbnb.com.co/rooms/1413201739688849287"><i class="fab fa-airbnb"></i></a>
+        <p class="texto-direccion">
+            Encuéntranos en esta dirección:<br>
+            📍 Calle 65 #48 - 78, La Candelaria, Medellín
+        </p>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/hostalpacificoencanto/" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/pacificoencanto/" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.airbnb.com.co/rooms/1413201739688849287" title="Airbnb"><i class="fab fa-airbnb"></i></a>
         </div>
+
+        <p style="margin-top: 35px; font-weight: normal; opacity: 0.8;">Atención: 7am a 10pm</p>
     </footer>
 
     <script>
-        // Lógica del Slide Aleatorio
-        const images = document.querySelectorAll('.slide-img');
+        const images = document.querySelectorAll('.slide');
         let current = 0;
-
-        function changeSlide() {
+        setInterval(() => {
             images[current].classList.remove('active');
-            let next = Math.floor(Math.random() * images.length);
-            // Evitar que repita la misma foto
-            if (next === current) next = (current + 1) % images.length;
-            current = next;
+            current = (current + 1) % images.length;
             images[current].classList.add('active');
-        }
-
-        setInterval(changeSlide, 4500); // Cambio cada 4.5 segundos
+        }, 4000);
     </script>
 
 </body>
