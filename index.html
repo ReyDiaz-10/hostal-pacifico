@@ -4,30 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hostal Pacífico Encanto</title>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <style>
+        /* RESET GENERAL */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: #9eb196 !important; /* VERDE SAGE */
-            color: #433428 !important; /* CAFÉ OSCURO */
+            /* COLORES SAGE Y MENTA REFORZADOS CON IMPORTANT */
+            background-color: #9eb196 !important; 
+            color: #433428 !important; 
             font-family: 'Arial Black', Gadget, sans-serif;
             text-align: center;
+            overflow-x: hidden;
         }
 
-        /* HEADER: TÍTULO CON RELIEVE Y SOMBRAS */
-        .header-section { padding: 50px 10px; }
+        /* HEADER: TÍTULO CON RELIEVE Y SOMBRAS DE IMAGEN DE REFERENCIA */
+        .header-section { padding: 60px 10px; }
 
         .letra-p-gigante {
             font-size: 160px;
             font-family: 'Times New Roman', Times, serif;
             display: block;
             line-height: 0.5;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #433428;
-            text-shadow: 4px 4px 0px #86967f, 8px 8px 15px rgba(0,0,0,0.2);
+            /* Multi-capa de sombra para relieve */
+            text-shadow: 
+                2px 2px 0px #86967f, 
+                4px 4px 0px #86967f, 
+                6px 6px 1px rgba(0,0,0,0.15), 
+                8px 8px 15px rgba(0,0,0,0.2);
         }
 
         .titulo-hostal {
@@ -35,19 +42,24 @@
             font-weight: 900;
             letter-spacing: -2px;
             color: #433428;
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 6px 6px 12px rgba(0,0,0,0.2);
+            /* Sombra profunda */
+            text-shadow: 
+                2px 2px 0px rgba(0,0,0,0.1), 
+                4px 4px 6px rgba(0,0,0,0.2), 
+                6px 6px 12px rgba(0,0,0,0.25);
         }
 
-        /* CONTENEDOR CENTRAL MENTA */
+        /* PANEL CENTRAL MENTA CON SUPER-SOMBRA */
         .bloque-central {
             background-color: #c5e1d4 !important; /* VERDE MENTA PASTEL */
             margin: 20px 5%;
             padding: 50px 20px;
             border-radius: 50px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            /* Sombra ultra profunda para flotar */
+            box-shadow: 0 30px 60px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.15);
         }
 
-        /* SLIDER */
+        /* SLIDER CON SOMBRA */
         .slider-container {
             width: 100%;
             max-width: 850px;
@@ -56,7 +68,8 @@
             border-radius: 30px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            /* Sombra profunda */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
         }
 
         .slide {
@@ -66,26 +79,32 @@
         }
         .slide.active { opacity: 1; }
 
-        /* SERVICIOS */
+        /* SERVICIOS: ICONO + DESCRIPCIÓN VISIBLE */
         .servicios-layout {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
+            margin-top: 30px;
         }
 
         .item-servicio { width: 130px; text-align: center; }
 
         .item-servicio i {
-            font-size: 50px;
+            font-size: 55px;
             margin-bottom: 15px;
             color: #433428;
-            filter: drop-shadow(3px 5px 3px rgba(0,0,0,0.3));
+            /* Sombra PROFUNDA en iconos */
+            filter: drop-shadow(4px 6px 5px rgba(0,0,0,0.3));
         }
 
-        .item-servicio p { font-size: 16px; font-weight: bold; }
+        .item-servicio p {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+        }
 
-        /* BOTONES FLOTANTES */
+        /* BOTONES FLOTANTES IDENTICOS */
         .btn-circular {
             position: fixed;
             width: 75px;
@@ -96,7 +115,7 @@
             justify-content: center;
             color: white;
             font-size: 40px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
             text-decoration: none;
             z-index: 10000;
         }
@@ -104,7 +123,7 @@
         .ws-btn { bottom: 120px; right: 30px; background-color: #25d366; }
         .waze-btn { bottom: 30px; right: 30px; background-color: #33f1ff; }
 
-        /* FOOTER */
+        /* FOOTER Y AIRBNB */
         footer { padding: 40px 20px 120px; }
 
         .boton-airbnb {
@@ -116,7 +135,8 @@
             font-weight: bold;
             font-size: 20px;
             display: inline-block;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            /* Sombra red-orange */
             box-shadow: 0 10px 20px rgba(255, 90, 95, 0.4);
         }
 
@@ -124,10 +144,11 @@
             font-size: 19px;
             font-weight: bold;
             color: #433428;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            line-height: 1.6;
         }
 
-        /* LOS 3 ICONOS SOCIALES */
+        /* LOS 3 ICONOS SOCIALES ALINEADOS */
         .social-icons a {
             font-size: 40px;
             margin: 0 20px;
@@ -180,15 +201,16 @@
         </p>
         
         <div class="social-icons">
-            <a href="https://www.facebook.com/hostalpacificoencanto/" title="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/pacificoencanto/" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.airbnb.com.co/rooms/1413201739688849287" title="Airbnb"><i class="fab fa-airbnb"></i></a>
+            <a href="https://www.facebook.com/hostalpacificoencanto/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/pacificoencanto/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.airbnb.com.co/rooms/1413201739688849287"><i class="fab fa-airbnb"></i></a>
         </div>
 
-        <p style="margin-top: 35px; font-weight: normal; opacity: 0.8;">Atención: 7am a 10pm</p>
+        <p style="margin-top: 30px; font-weight: normal; opacity: 0.8;">Atención: 7am a 10pm</p>
     </footer>
 
     <script>
+        // Lógica del Slider
         const images = document.querySelectorAll('.slide');
         let current = 0;
         setInterval(() => {
