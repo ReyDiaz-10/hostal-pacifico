@@ -1,209 +1,210 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hostal Pacífico Encanto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostal Pacífico Encanto</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<style>
+    <style>
+        /* RESET */
+        *{margin:0;padding:0;box-sizing:border-box;}
 
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
+        body {
+            font-family: 'Arial Black', sans-serif;
+            background-color: #9eb196 !important; 
+            text-align: center;
+            color: #433428;
+            overflow-x: hidden;
+        }
 
-body{
-    font-family: Arial, sans-serif;
-    background: linear-gradient(180deg,#9eb196,#c5e1d4);
-    text-align:center;
-    color:#5a3b2e;
-}
+        /* HEADER CON IMAGEN */
+        .header {
+            padding: 40px 20px 10px;
+        }
 
-/* HEADER */
-.header{
-    padding:50px 20px 20px;
-}
+        .logo-img {
+            width: 280px; /* Ajusta el tamaño según tu preferencia */
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 10px;
+            filter: drop-shadow(4px 4px 10px rgba(0,0,0,0.2));
+        }
 
-.logo{
-    width:140px;
-    margin-bottom:10px;
-}
+        .titulo-principal {
+            font-size: 45px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.1), 5px 5px 12px rgba(0,0,0,0.2);
+        }
 
-.titulo-img{
-    width:320px;
-    max-width:90%;
-}
+        /* GALERIA / SLIDER RE-ACTIVADO */
+        .slider-box {
+            width: 90%;
+            max-width: 850px;
+            height: 450px;
+            margin: 20px auto;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            background: #eee;
+        }
 
-/* GALERIA */
-.galeria{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    padding:20px;
-    overflow-x:auto;
-}
+        .slider-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            display: block;
+        }
 
-.galeria img{
-    width:140px;
-    height:220px;
-    object-fit:cover;
-    border-radius:15px;
-}
+        .slider-box img.active {
+            opacity: 1;
+            z-index: 1;
+        }
 
-/* SERVICIOS */
-.servicios{
-    background:#c5e1d4;
-    margin:20px;
-    padding:30px;
-    border-radius:30px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.2);
-}
+        /* SERVICIOS */
+        .servicios {
+            background: #c5e1d4 !important; 
+            margin: 20px;
+            padding: 40px 20px;
+            border-radius: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
 
-.servicios h2{
-    font-size:28px;
-    margin-bottom:20px;
-}
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
 
-/* GRID */
-.grid{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-}
+        .item { width: 115px; }
+        .item i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #433428;
+            filter: drop-shadow(3px 4px 3px rgba(0,0,0,0.2));
+        }
+        .item p { font-weight: bold; font-size: 14px; }
+        .item small { font-size: 11px; opacity: 0.8; }
 
-.item{
-    width:110px;
-}
+        /* BOTONES Y DIRECCION */
+        .btn-airbnb {
+            display: inline-block;
+            margin: 20px;
+            background: #ff5a5f;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(255, 90, 95, 0.4);
+        }
 
-.item i{
-    font-size:35px;
-    margin-bottom:8px;
-}
+        .direccion {
+            font-size: 17px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
 
-.item p{
-    font-weight:bold;
-}
+        .social-bar { margin-bottom: 110px; }
+        .social-bar a {
+            font-size: 35px;
+            margin: 0 15px;
+            color: #433428;
+            text-decoration: none;
+        }
 
-.item small{
-    font-size:12px;
-    opacity:0.7;
-}
+        /* BOTONES FLOTANTES */
+        .btn-flotante {
+            position: fixed;
+            right: 25px;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            text-decoration: none;
+            z-index: 1000;
+        }
 
-/* BOTON */
-.btn-airbnb{
-    display:inline-block;
-    margin:30px;
-    background:#ff5a5f;
-    color:white;
-    padding:15px 35px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-}
+        .whatsapp { bottom: 110px; background: #25d366; }
+        .waze { bottom: 30px; background: #33f1ff; color: #000; }
 
-/* DIRECCION */
-.direccion{
-    font-size:18px;
-    margin-bottom:40px;
-}
-
-/* BOTONES FLOTANTES */
-.btn{
-    position:fixed;
-    right:20px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    color:white;
-}
-
-.whatsapp{bottom:100px;background:#25d366;}
-.waze{bottom:30px;background:#33f1ff;color:black;}
-
-</style>
+    </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
-    <img src="images/logo.png" class="logo">
-    <img src="images/logo.png" class="titulo-img">
+    <img src="logo.png" alt="Logo Hostal Pacífico Encanto" class="logo-img">
+    <h1 class="titulo-principal">Hostal Pacífico Encanto</h1>
 </div>
 
-<!-- GALERIA -->
-<div class="galeria">
-            <img src="entrada 1.jpg" class="slide-img active">
-            <img src="recibidor con muebles.jpg" class="slide-img">
-            <img src="baño 1.jpg" class="slide-img">
-            <img src="alguna habitación.jpg" class="slide-img">
-            <img src="zona de trabajo2.jpg" class="slide-img">
-            <img src="comedor cerca a la cocina.jpg" class="slide-img">
-            <img src="otro comedor.jpg" class="slide-img">
-            <img src="20A990D1-C7A6-4941-8CA7-5699FF7BB345.JPG" class="slide-img">
+<div class="slider-box" id="slider">
+    <img src="entrada 1.jpg" class="active">
+    <img src="recibidor con muebles.jpg">
+    <img src="baño 1.jpg">
+    <img src="alguna habitación.jpg">
+    <img src="zona de trabajo2.jpg">
+    <img src="comedor cerca a la cocina.jpg">
+    <img src="otro comedor.jpg">
+    <img src="20A990D1-C7A6-4941-8CA7-5699FF7BB345.JPG">
 </div>
 
-<!-- SERVICIOS -->
 <div class="servicios">
-    <h2>Nuestros Servicios</h2>
-
+    <h2 style="margin-bottom:25px;">Nuestros Servicios</h2>
     <div class="grid">
-
-        <div class="item">
-            <i class="fas fa-wifi"></i>
-            <p>wifi</p>
-            <small>Conexión rápida</small>
-        </div>
-
-        <div class="item">
-            <i class="fas fa-bath"></i>
-            <p>baño</p>
-            <small>Ducha tropical</small>
-        </div>
-
-        <div class="item">
-            <i class="fas fa-utensils"></i>
-            <p>cocina</p>
-            <small>Uso comunal</small>
-        </div>
-
-        <div class="item">
-            <i class="fas fa-laptop"></i>
-            <p>trabajo</p>
-            <small>Zona cómoda</small>
-        </div>
-
-        <div class="item">
-            <i class="fas fa-shield-alt"></i>
-            <p>seguridad</p>
-            <small>Cámaras activas</small>
-        </div>
-
-        <div class="item">
-            <i class="fas fa-tv"></i>
-            <p>tv</p>
-            <small>Zonas comunes</small>
-        </div>
-
+        <div class="item"><i class="fas fa-wifi"></i><p>Wifi</p><small>Conexión rápida</small></div>
+        <div class="item"><i class="fas fa-bath"></i><p>Baño</p><small>Ducha tropical</small></div>
+        <div class="item"><i class="fas fa-utensils"></i><p>Cocina</p><small>Uso comunal</small></div>
+        <div class="item"><i class="fas fa-laptop"></i><p>Trabajo</p><small>Zona cómoda</small></div>
+        <div class="item"><i class="fas fa-shield-alt"></i><p>Seguridad</p><small>Cámaras activas</small></div>
+        <div class="item"><i class="fas fa-tv"></i><p>TV</p><small>Zonas comunes</small></div>
     </div>
 </div>
 
-<!-- BOTON -->
-<a href="#" class="btn-airbnb">Reservar en Airbnb</a>
+<a href="https://www.airbnb.com.co/users/profile/1470728514452495329" class="btn-airbnb">Reservar en Airbnb</a>
 
-<!-- DIRECCION -->
 <div class="direccion">
-📍 Calle 65 #48 - 78, La Candelaria, Medellín
+    📍 Calle 65 #48 - 78, La Candelaria, Medellín
 </div>
 
-<!-- BOTONES -->
-<a href="#" class="btn whatsapp"><i class="fab fa-whatsapp"></i></a>
-<a href="#" class="btn waze"><i class="fab fa-waze"></i></a>
+<div class="social-bar">
+    <a href="https://www.facebook.com/hostalpacificoencanto/"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/pacificoencanto/"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.airbnb.com.co/rooms/1413201739688849287"><i class="fab fa-airbnb"></i></a>
+</div>
+
+<a href="https://w.app/tmdxwn" class="btn-flotante whatsapp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://waze.com/ul/hd3478effp" class="btn-flotante waze"><i class="fab fa-waze"></i></a>
+
+<script>
+    window.onload = function() {
+        const images = document.querySelectorAll('#slider img');
+        let current = 0;
+        
+        if (images.length > 0) {
+            setInterval(() => {
+                images[current].classList.remove('active');
+                current = (current + 1) % images.length;
+                images[current].classList.add('active');
+            }, 4000); // Cambia cada 4 segundos
+        }
+    };
+</script>
 
 </body>
 </html>
