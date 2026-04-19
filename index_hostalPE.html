@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostal Pacífico Encanto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --fondo-sage: #a3b899; /* El color verde de tu imagen de logo */
+            --centro-menta: #d1e8e2; /* El color pastel para la franja central */
+            --texto-cafe: #4b3621;
+            --verde-ws: #25d366;
+            --azul-waze: #33ccff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Helvetica', Arial, sans-serif;
+            background-color: var(--fondo-sage);
+            color: var(--texto-cafe);
+            text-align: center;
+        }
+
+        /* Estilo del Logo basado en tu imagen */
+        .header-logo {
+            padding: 40px 20px;
+        }
+        .logo-p {
+            font-size: 80px;
+            font-family: 'Serif';
+            color: var(--texto-cafe);
+            display: block;
+            margin-bottom: -10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .titulo-hostal {
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 5px 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Franja Central Pastel */
+        .contenido-central {
+            background-color: var(--centro-menta);
+            margin: 20px 5%;
+            padding: 40px 20px;
+            border-radius: 30px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        /* Slide Suave Aleatorio */
+        .slider-box {
+            width: 90%;
+            height: 400px;
+            margin: 0 auto 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slide-img {
+            width: 100%; height: 100%; object-fit: cover;
+            position: absolute; left: 0; opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        .active { opacity: 1; }
+
+        /* Iconos con sombra sutil */
+        .grid-servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .servicio i {
+            font-size: 40px;
+            filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.2)); /* Sombra sutil solicitada */
+            margin-bottom: 10px;
+        }
+
+        /* Botones Flotantes Animados */
+        .ws-float {
+            position: fixed;
+            bottom: 150px; right: 30px;
+            background: var(--verde-ws);
+            width: 65px; height: 65px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 35px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            text-decoration: none;
+            animation: floating 3s infinite ease-in-out;
+            z-index: 100;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .waze-box {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            background: var(--azul-waze);
+            padding: 15px;
+            border-radius: 15px;
+            width: 250px;
+            color: #004466;
+            font-size: 13px;
+            border: 2px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+
+        footer { padding-bottom: 50px; }
+        .btn-airbnb {
+            background: #ff5a5f; color: white;
+            padding: 12px 25px; border-radius: 25px;
+            text-decoration: none; font-weight: bold;
+            display: inline-block; margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-logo">
+        <span class="logo-p">P</span>
+        <div class="titulo-hostal">Hostal Pacífico Encanto</div>
+    </div>
+
+    <div class="contenido-central">
+        <div class="slider-box" id="slider">
+            <img src="tu_foto_1.jpg" class="slide-img active">
+            <img src="tu_foto_2.jpg" class="slide-img">
+            <img src="tu_foto_3.jpg" class="slide-img">
+        </div>
+
+        <h3>Nuestros Servicios</h3>
+        <div class="grid-servicios">
+            <div class="servicio"><i class="fas fa-wifi"></i><br>Wifi<br><small>Conexión Rápida</small></div>
+            <div class="servicio"><i class="fas fa-bath"></i><br>Baño<br><small>Ducha Tropical</small></div>
+            <div class="servicio"><i class="fas fa-utensils"></i><br>Cocina<br><small>Uso Comunal</small></div>
+            <div class="servicio"><i class="fas fa-laptop"></i><br>Zona de trabajo<br><small>Espacio Ergonómico</small></div>
+            <div class="servicio"><i class="fas fa-shield-alt"></i><br>Seguridad<br><small>Vigilancia 24h</small></div>
+        </div>
+    </div>
+
+    <a href="https://w.app/tmdxwn" class="ws-float"><i class="fab fa-whatsapp"></i></a>
+
+    <div class="waze-box">
+        <strong>Calle 65 #48 - 78, Medellín</strong><br>
+        Usa Waze para llegar más fácil:<br>
+        <a href="https://waze.com/ul/hd3478effp" style="color:white; font-weight:bold;">IR CON WAZE</a>
+    </div>
+
+    <footer>
+        <p>Horario: 7am a 10pm</p>
+        <a href="https://www.airbnb.com.co/users/profile/1470728514452495329" class="btn-airbnb">Reservar en Airbnb</a>
+        <div style="margin-top:20px;">
+            <a href="https://www.facebook.com/hostalpacificoencanto/"><i class="fab fa-facebook" style="font-size:25px; margin:10px;"></i></a>
+            <a href="https://www.instagram.com/pacificoencanto/"><i class="fab fa-instagram" style="font-size:25px; margin:10px;"></i></a>
+            <a href="https://www.airbnb.com.co/rooms/1413201739688849287"><i class="fab fa-airbnb" style="font-size:25px; margin:10px;"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        const imgs = document.querySelectorAll('.slide-img');
+        let current = 0;
+        setInterval(() => {
+            imgs[current].classList.remove('active');
+            let next = Math.floor(Math.random() * imgs.length);
+            current = next;
+            imgs[current].classList.add('active');
+        }, 4000);
+    </script>
+</body>
+</html>
