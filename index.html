@@ -16,6 +16,30 @@
             text-align: center;
         }
 
+        /* SELECTOR DE IDIOMA */
+        .language-picker {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2000;
+            display: flex;
+            gap: 10px;
+        }
+        .lang-btn {
+            background: white;
+            border: 2px solid #433428;
+            border-radius: 8px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .lang-btn:hover { transform: scale(1.1); }
+        .lang-btn img { width: 25px; height: auto; margin-right: 5px; }
+
         /* DECORACIÓN PACÍFICO LATERAL */
         .decoracion-fondo {
             position: fixed;
@@ -27,21 +51,13 @@
         }
 
         /* HEADER INTEGRADO */
-        .header {
-            padding: 30px 0;
-            background-color: #9eb196;
-        }
-        .logo-img {
-            max-width: 320px;
-            width: 80%;
-            height: auto;
-            border: none;
-        }
+        .header { padding: 50px 0 20px; background-color: #9eb196; }
+        .logo-img { max-width: 320px; width: 80%; height: auto; border: none; }
 
-        /* CONTENEDOR CENTRAL: CONTRASTE PASTEL */
+        /* CONTENEDOR CENTRAL */
         .panel-central {
             background-color: #fdf5e6; 
-            margin: 20px auto;
+            margin: 10px auto 20px;
             padding: 40px 10px;
             width: 95%;
             max-width: 900px;
@@ -51,13 +67,9 @@
 
         /* SLIDER */
         .slider-box {
-            width: 95%;
-            max-width: 750px;
-            height: 400px;
-            margin: 0 auto 40px;
-            border-radius: 25px;
-            overflow: hidden;
-            position: relative;
+            width: 95%; max-width: 750px; height: 400px;
+            margin: 0 auto 40px; border-radius: 25px;
+            overflow: hidden; position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         .slider-box img {
@@ -67,80 +79,32 @@
         }
         .slider-box img.active { opacity: 1; z-index: 1; }
 
-        /* SERVICIOS CON MAYOR ESPACIADO */
+        /* SERVICIOS */
         .servicios-grid {
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center;
-            gap: 35px 25px; /* Aumentado el espacio entre íconos */
-            margin-bottom: 40px;
-            padding: 0 10px;
+            display: flex; flex-wrap: wrap; justify-content: center;
+            gap: 35px 25px; margin-bottom: 40px; padding: 0 10px;
         }
+        .item { width: 130px; display: flex; flex-direction: column; align-items: center; }
+        .item i { font-size: 42px; margin-bottom: 12px; filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1)); }
         
-        .item { 
-            width: 130px; /* Un poco más ancho para el texto */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        .item:nth-child(1) i { color: #00bcd4; } 
+        .item:nth-child(2) i { color: #4caf50; } 
+        .item:nth-child(3) i { color: #ff5722; } 
+        .item:nth-child(4) i { color: #fbc02d; } 
+        .item:nth-child(5) i { color: #3f51b5; } 
+        .item:nth-child(6) i { color: #e91e63; } 
 
-        .item i { 
-            font-size: 42px; 
-            margin-bottom: 12px; 
-            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1)); 
-        }
-        
-        /* Colores llamativos para servicios */
-        .item:nth-child(1) i { color: #00bcd4; } /* Wifi */
-        .item:nth-child(2) i { color: #4caf50; } /* Baño */
-        .item:nth-child(3) i { color: #ff5722; } /* Cocina */
-        .item:nth-child(4) i { color: #fbc02d; } /* Trabajo */
-        .item:nth-child(5) i { color: #3f51b5; } /* Seguro */
-        .item:nth-child(6) i { color: #e91e63; } /* TV */
+        .item p { font-size: 14px; font-weight: bold; margin-bottom: 4px; text-transform: uppercase; }
+        .item span { font-size: 11px; font-weight: normal; line-height: 1.2; opacity: 0.8; font-family: sans-serif; }
 
-        .item p { 
-            font-size: 14px; 
-            font-weight: bold; 
-            margin-bottom: 4px;
-            text-transform: uppercase;
-        }
-
-        .item span {
-            font-size: 11px;
-            font-weight: normal;
-            line-height: 1.2;
-            opacity: 0.8;
-            font-family: sans-serif; /* Más legible para texto pequeño */
-        }
-
-        /* BLOQUE FINAL CENTRADO */
-        .bloque-final {
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .argumento-airbnb {
-            font-size: 15px;
-            max-width: 550px;
-            margin: 0 auto 10px;
-            padding: 0 20px;
-        }
-
+        /* BLOQUE FINAL */
+        .bloque-final { display: flex; flex-direction: column; align-items: center; gap: 15px; }
         .btn-airbnb {
-            background-color: #ff5a5f;
-            color: white;
-            padding: 18px 45px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
+            background-color: #ff5a5f; color: white; padding: 18px 45px;
+            border-radius: 50px; text-decoration: none; font-weight: bold;
             box-shadow: 0 10px 20px rgba(255, 90, 95, 0.3);
         }
-
         .info-texto { font-size: 16px; font-weight: bold; margin: 5px 0; }
-        
         .social-bar { margin: 25px 0 80px; }
         .social-bar a { font-size: 38px; margin: 0 18px; color: #433428; text-decoration: none; }
 
@@ -157,12 +121,17 @@
 </head>
 <body>
 
+    <div class="language-picker">
+        <button class="lang-btn" onclick="setLanguage('es')">🇪🇸</button>
+        <button class="lang-btn" onclick="setLanguage('en')">🇬🇧</button>
+    </div>
+
     <div class="decoracion-fondo">
         🌴 🐟 🌊 💃 🎷 🎹 🌴 🐟 🌊 🕺 🎷 🥁
     </div>
 
     <div class="header">
-        <img src="logo.png" alt="Hostal Pacífico Encanto" class="logo-img">
+        <img src="logo_grande.png" alt="Hostal Pacífico Encanto" class="logo-img">
     </div>
 
     <div class="panel-central">
@@ -176,49 +145,69 @@
             <img src="comedor cerca a la cocina.jpg">
             <img src="otro comedor.jpg">
             <img src="20A990D1-C7A6-4941-8CA7-5699FF7BB345.JPG">
+            <img src="image1".jpg">
+            <img src="image2".jpg">
+            <img src="image3".jpg">
+            <img src="image4".jpg">
+            <img src="image5".jpg">
+            <img src="image6".jpg">
+            <img src="image7".jpg">
+            <img src="image8".jpg">
+            <img src="image9".jpg">
+            <img src="image10".jpg">
+            <img src="image11".jpg">
+            <img src="image12".jpg">
+            <img src="image13".jpg">
+            <img src="image14".jpg">
+            <img src="image15".jpg">
+            <img src="image16".jpg">
+            <img src="image17".jpg">
+            <img src="image18".jpg">
+            <img src="image19".jpg">
         </div>
 
-        <h2 style="margin-bottom: 30px;">Nuestros Servicios</h2>
+        <h2 id="txt-servicios-titulo">Nuestros Servicios</h2>
+        <br>
         
         <div class="servicios-grid">
             <div class="item">
                 <i class="fas fa-wifi"></i>
-                <p>Wifi</p>
-                <span>Alta velocidad en todo el hostal</span>
+                <p id="txt-wifi">Wifi</p>
+                <span id="txt-wifi-desc">Alta velocidad en todo el hostal</span>
             </div>
             <div class="item">
                 <i class="fas fa-bath"></i>
-                <p>Baño</p>
-                <span>Ducha con agua caliente</span>
+                <p id="txt-bano">Baño</p>
+                <span id="txt-bano-desc">Ducha con agua caliente</span>
             </div>
             <div class="item">
                 <i class="fas fa-utensils"></i>
-                <p>Cocina</p>
-                <span>Uso compartido totalmente equipada</span>
+                <p id="txt-cocina">Cocina</p>
+                <span id="txt-cocina-desc">Uso compartido totalmente equipada</span>
             </div>
             <div class="item">
                 <i class="fas fa-laptop"></i>
-                <p>Trabajo</p>
-                <span>Espacio cómodo y productivo</span>
+                <p id="txt-trabajo">Trabajo</p>
+                <span id="txt-trabajo-desc">Espacio cómodo y productivo</span>
             </div>
             <div class="item">
                 <i class="fas fa-shield-alt"></i>
-                <p>Seguro</p>
-                <span>Cámaras y acceso controlado</span>
+                <p id="txt-seguro">Seguro</p>
+                <span id="txt-seguro-desc">Cámaras y acceso controlado</span>
             </div>
             <div class="item">
                 <i class="fas fa-tv"></i>
-                <p>TV</p>
-                <span>Zonas sociales con streaming</span>
+                <p id="txt-tv">TV</p>
+                <span id="txt-tv-desc">Zonas sociales con streaming</span>
             </div>
         </div>
 
         <div class="bloque-final">
-            <p class="argumento-airbnb">Para tu seguridad y confianza, gestionamos todas nuestras reservas de forma confiable a través de Airbnb.</p>
+            <p id="txt-argumento" class="argumento-airbnb">Para tu seguridad y confianza, gestionamos todas nuestras reservas de forma confiable a través de Airbnb.</p>
             
-            <a href="https://www.airbnb.com.co/users/profile/1470728514452495329" class="btn-airbnb">RESERVAR EN AIRBNB</a>
+            <a href="https://www.airbnb.com.co/users/profile/1470728514452495329" class="btn-airbnb" id="txt-btn-reserva">RESERVAR EN AIRBNB</a>
 
-            <p class="info-texto">🕒 Horario de atención: 7:00 AM - 10:00 PM</p>
+            <p class="info-texto" id="txt-horario">🕒 Horario de atención: 7:00 AM - 10:00 PM</p>
             <p class="info-texto">📍 Calle 65 #48 - 78, La Candelaria, Medellín</p>
 
             <div class="social-bar">
@@ -233,6 +222,66 @@
     <a href="https://waze.com/ul/hd3478effp" class="btn-flotante waze"><i class="fab fa-waze"></i></a>
 
     <script>
+        // TRADUCCIONES
+        const translations = {
+            es: {
+                servicios_titulo: "Nuestros Servicios",
+                wifi: "Wifi",
+                wifi_desc: "Alta velocidad en todo el hostal",
+                bano: "Baño",
+                bano_desc: "Ducha con agua caliente",
+                cocina: "Cocina",
+                cocina_desc: "Uso compartido totalmente equipada",
+                trabajo: "Trabajo",
+                trabajo_desc: "Espacio cómodo y productivo",
+                seguro: "Seguro",
+                seguro_desc: "Cámaras y acceso controlado",
+                tv: "TV",
+                tv_desc: "Zonas sociales con streaming",
+                argumento: "Para tu seguridad y confianza, gestionamos todas nuestras reservas de forma confiable a través de Airbnb.",
+                btn_reserva: "RESERVAR EN AIRBNB",
+                horario: "🕒 Horario de atención: 7:00 AM - 10:00 PM"
+            },
+            en: {
+                servicios_titulo: "Our Services",
+                wifi: "Wifi",
+                wifi_desc: "High speed throughout the hostel",
+                bano: "Bathroom",
+                bano_desc: "Hot water shower",
+                cocina: "Kitchen",
+                cocina_desc: "Fully equipped shared use",
+                trabajo: "Work",
+                trabajo_desc: "Comfortable and productive space",
+                seguro: "Security",
+                seguro_desc: "Cameras and controlled access",
+                tv: "TV",
+                tv_desc: "Social areas with streaming",
+                argumento: "For your safety and confidence, we manage all our reservations reliably through Airbnb.",
+                btn_reserva: "BOOK ON AIRBNB",
+                horario: "🕒 Service hours: 7:00 AM - 10:00 PM"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.getElementById('txt-servicios-titulo').innerText = translations[lang].servicios_titulo;
+            document.getElementById('txt-wifi').innerText = translations[lang].wifi;
+            document.getElementById('txt-wifi-desc').innerText = translations[lang].wifi_desc;
+            document.getElementById('txt-bano').innerText = translations[lang].bano;
+            document.getElementById('txt-bano-desc').innerText = translations[lang].bano_desc;
+            document.getElementById('txt-cocina').innerText = translations[lang].cocina;
+            document.getElementById('txt-cocina-desc').innerText = translations[lang].cocina_desc;
+            document.getElementById('txt-trabajo').innerText = translations[lang].trabajo;
+            document.getElementById('txt-trabajo-desc').innerText = translations[lang].trabajo_desc;
+            document.getElementById('txt-seguro').innerText = translations[lang].seguro;
+            document.getElementById('txt-seguro-desc').innerText = translations[lang].seguro_desc;
+            document.getElementById('txt-tv').innerText = translations[lang].tv;
+            document.getElementById('txt-tv-desc').innerText = translations[lang].tv_desc;
+            document.getElementById('txt-argumento').innerText = translations[lang].argumento;
+            document.getElementById('txt-btn-reserva').innerText = translations[lang].btn_reserva;
+            document.getElementById('txt-horario').innerText = translations[lang].horario;
+        }
+
+        // Slider logic
         window.onload = function() {
             const images = document.querySelectorAll('#slider img');
             let current = 0;
