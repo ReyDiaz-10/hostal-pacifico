@@ -16,7 +16,7 @@
             text-align: center;
         }
 
-        /* SELECTOR DE IDIOMA - BOTONES ES / EN */
+        /* SELECTOR DE IDIOMA - EFECTO HUNDIDO */
         .language-picker {
             position: absolute;
             top: 20px;
@@ -29,19 +29,21 @@
             background: #fdf5e6;
             border: 2px solid #433428;
             border-radius: 8px;
-            padding: 8px 12px;
+            padding: 8px 15px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: 0.3s;
+            color: #433428;
+            box-shadow: 0 4px 0px #433428; /* Efecto de profundidad */
+            transition: all 0.1s;
         }
-        .lang-btn:hover { background: #fff; transform: translateY(-2px); }
+        .lang-btn:active, .lang-btn.active {
+            transform: translateY(4px); /* Se "hunde" */
+            box-shadow: 0 0px 0px #433428;
+            background-color: #d8caba;
+        }
 
-        /* ICONOS LATERALES CON CONTRASTE FUERTE */
+        /* ICONOS LATERALES ABSTRACTOS (Efecto Tallado) */
         .decoracion-lateral {
             position: fixed;
             top: 0; width: 100px; height: 100%;
@@ -49,9 +51,11 @@
             justify-content: space-around;
             align-items: center;
             font-size: 45px; 
-            color: #2d3829; 
-            text-shadow: 1px 1px 0px rgba(255,255,255,0.2);
+            color: #2d3829; /* Verde más fuerte */
+            /* Sombras de bordes claros para efecto relieve */
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.3), -1px -1px 1px rgba(0,0,0,0.5);
             pointer-events: none; z-index: 1;
+            opacity: 0.6;
         }
         .izq { left: 15px; }
         .der { right: 15px; }
@@ -97,7 +101,6 @@
         .item p { font-size: 14px; font-weight: bold; text-transform: uppercase; margin-bottom: 4px; }
         .item span { font-size: 11px; font-weight: normal; line-height: 1.2; opacity: 0.8; font-family: sans-serif; }
 
-        /* COLORES ICONOS */
         .fa-wifi { color: #00bcd4; } .fa-bath { color: #4caf50; }
         .fa-utensils { color: #ff5722; } .fa-laptop { color: #fbc02d; }
         .fa-shield-alt { color: #3f51b5; } .fa-tv { color: #e91e63; }
@@ -126,8 +129,8 @@
 <body>
 
     <div class="language-picker">
-        <button class="lang-btn" onclick="setLanguage('es')">🇪🇸 ES</button>
-        <button class="lang-btn" onclick="setLanguage('en')">🇬🇧 EN</button>
+        <button id="btn-es" class="lang-btn active" onclick="setLanguage('es')">ES</button>
+        <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">EN</button>
     </div>
 
     <div class="decoracion-lateral izq">
@@ -164,42 +167,17 @@
         <br>
         
         <div class="servicios-grid">
-            <div class="item">
-                <i class="fas fa-wifi"></i>
-                <p id="txt-wifi">Wifi</p>
-                <span id="txt-wifi-desc">Alta velocidad en todo el hostal</span>
-            </div>
-            <div class="item">
-                <i class="fas fa-bath"></i>
-                <p id="txt-bano">Baño</p>
-                <span id="txt-bano-desc">Ducha con agua caliente</span>
-            </div>
-            <div class="item">
-                <i class="fas fa-utensils"></i>
-                <p id="txt-cocina">Cocina</p>
-                <span id="txt-cocina-desc">Uso compartido totalmente equipada</span>
-            </div>
-            <div class="item">
-                <i class="fas fa-laptop"></i>
-                <p id="txt-trabajo">Trabajo</p>
-                <span id="txt-trabajo-desc">Espacio cómodo y productivo</span>
-            </div>
-            <div class="item">
-                <i class="fas fa-shield-alt"></i>
-                <p id="txt-seguro">Seguro</p>
-                <span id="txt-seguro-desc">Cámaras y acceso controlado</span>
-            </div>
-            <div class="item">
-                <i class="fas fa-tv"></i>
-                <p id="txt-tv">TV</p>
-                <span id="txt-tv-desc">Zonas sociales con streaming</span>
-            </div>
+            <div class="item"><i class="fas fa-wifi"></i><p id="txt-wifi">Wifi</p><span id="txt-wifi-desc">Alta velocidad en todo el hostal</span></div>
+            <div class="item"><i class="fas fa-bath"></i><p id="txt-bano">Baño</p><span id="txt-bano-desc">Ducha con agua caliente</span></div>
+            <div class="item"><i class="fas fa-utensils"></i><p id="txt-cocina">Cocina</p><span id="txt-cocina-desc">Uso compartido totalmente equipada</span></div>
+            <div class="item"><i class="fas fa-laptop"></i><p id="txt-trabajo">Trabajo</p><span id="txt-trabajo-desc">Espacio cómodo y productivo</span></div>
+            <div class="item"><i class="fas fa-shield-alt"></i><p id="txt-seguro">Seguro</p><span id="txt-seguro-desc">Cámaras y acceso controlado</span></div>
+            <div class="item"><i class="fas fa-tv"></i><p id="txt-tv">TV</p><span id="txt-tv-desc">Zonas sociales con streaming</span></div>
         </div>
 
         <div class="bloque-final">
             <p id="txt-argumento">Para tu seguridad y confianza, gestionamos todas nuestras reservas de forma confiable a través de Airbnb.</p>
             <a href="https://www.airbnb.com.co/users/profile/1470728514452495329" class="btn-airbnb" id="txt-btn-reserva">RESERVAR EN AIRBNB</a>
-
             <p class="info-texto" id="txt-horario">🕒 Horario de atención: 7:00 AM - 10:00 PM</p>
             <p class="info-texto" id="txt-ubicacion">📍 Calle 65 #48 - 78, La Candelaria, Medellín</p>
 
@@ -245,6 +223,7 @@
         };
 
         function setLanguage(lang) {
+            // Cambiar textos
             document.getElementById('txt-servicios-titulo').innerText = translations[lang].servicios_titulo;
             document.getElementById('txt-wifi').innerText = translations[lang].wifi;
             document.getElementById('txt-wifi-desc').innerText = translations[lang].wifi_desc;
@@ -262,6 +241,11 @@
             document.getElementById('txt-btn-reserva').innerText = translations[lang].btn_reserva;
             document.getElementById('txt-horario').innerText = translations[lang].horario;
             document.getElementById('txt-ubicacion').innerText = translations[lang].ubicacion;
+
+            // Manejo visual de los botones
+            document.getElementById('btn-es').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
         }
 
         window.onload = function() {
