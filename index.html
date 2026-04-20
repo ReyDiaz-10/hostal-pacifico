@@ -10,8 +10,7 @@
         *{margin:0;padding:0;box-sizing:border-box;}
         body {
             font-family: 'Arial Black', sans-serif;
-            /* COLOR EXACTO EXTRAÍDO DE logo_grande.png */
-            background-color: #6b8a6a; 
+            background-color: #6b8a6a; /* Color extraído de logo_grande.png */
             color: #433428;
             overflow-x: hidden;
             text-align: center;
@@ -38,14 +37,13 @@
             box-shadow: 0 5px 0px #433428;
             transition: all 0.1s ease;
         }
-        /* Clase para el botón presionado (idioma activo) */
         .lang-btn.active {
             transform: translateY(5px);
             box-shadow: 0 0px 0px #433428;
             background-color: #e6dac8;
         }
 
-        /* ICONOS LATERALES - ESTILO TALLADO (image_cfe27a.png) */
+        /* ICONOS LATERALES ABSTRACTOS */
         .decoracion-lateral {
             position: fixed;
             top: 0; width: 120px; height: 100%;
@@ -53,9 +51,7 @@
             justify-content: space-around;
             align-items: center;
             font-size: 55px; 
-            /* Color más oscuro para contraste abstracto */
             color: #4b634a; 
-            /* Sombra clara para efecto relieve/bordes */
             text-shadow: 1px 1px 2px rgba(255,255,255,0.2);
             pointer-events: none; z-index: 1;
             opacity: 0.7;
@@ -65,13 +61,7 @@
 
         /* HEADER Y LOGO */
         .header { padding: 80px 0 30px; }
-        .logo-img { 
-            width: 90%; 
-            max-width: 900px; 
-            height: auto; 
-            display: block;
-            margin: 0 auto;
-        }
+        .logo-img { width: 90%; max-width: 900px; height: auto; display: block; margin: 0 auto; }
 
         /* PANEL CENTRAL */
         .panel-central {
@@ -126,7 +116,7 @@
         .btn-airbnb:hover { transform: scale(1.05); }
         
         .info-texto { font-size: 18px; font-weight: bold; margin: 10px 0; }
-        .social-bar { margin: 35px 0; display: flex; justify-content: center; gap: 35px; }
+        .social-bar { margin: 25px 0 35px; display: flex; justify-content: center; gap: 35px; }
         .social-bar a { font-size: 45px; color: #433428; text-decoration: none; transition: 0.3s; }
         .social-bar a:hover { transform: translateY(-5px); color: #6b8a6a; }
 
@@ -135,7 +125,6 @@
             position: fixed; right: 25px; width: 68px; height: 68px;
             border-radius: 50%; display: flex; align-items: center;
             justify-content: center; font-size: 38px; color: white; z-index: 1000;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
         .whatsapp { bottom: 115px; background: #25d366; }
         .waze { bottom: 35px; background: #33f1ff; color: #000; }
@@ -153,14 +142,12 @@
         <i class="fas fa-drum"></i>
         <i class="fas fa-umbrella-beach"></i>
         <i class="fas fa-fish"></i>
-        <i class="fas fa-water"></i>
     </div>
     <div class="decoracion-lateral der">
         <i class="fas fa-fish"></i>
         <i class="fas fa-umbrella-beach"></i>
         <i class="fas fa-drum"></i>
         <i class="fas fa-water"></i>
-        <i class="fas fa-drum"></i>
     </div>
 
     <div class="header">
@@ -176,68 +163,41 @@
             <img src="zona de trabajo2.jpg">
             <img src="comedor cerca a la cocina.jpg">
             <img src="otro comedor.jpg">
-            <img src="image1.jpg"> <img src="image2.jpg"> <img src="image3.jpg">
-            <img src="image4.jpg"> <img src="image5.jpg"> <img src="image6.jpg">
-            <img src="image7.jpg"> <img src="image8.jpg"> <img src="image9.jpg">
-            <img src="image10.jpg"> <img src="image11.jpg"> <img src="image12.jpg">
-            <img src="image13.jpg"> <img src="image14.jpg"> <img src="image15.jpg">
-            <img src="image16.jpg"> <img src="image17.jpg"> <img src="image18.jpg">
-            <img src="image19.jpg">
-        </div>
+            </div>
 
         <h2 id="txt-servicios-titulo">Nuestros Servicios</h2>
         <br>
         
         <div class="servicios-grid">
-            <div class="item">
-                <i class="fas fa-wifi"></i>
-                <p id="txt-wifi">Wifi</p>
-                <span id="txt-wifi-desc">Alta velocidad en todo el hostal</span>
-            </div>
-            <div class="item">
-                <i class="fas fa-bath"></i>
-                <p id="txt-bano">Baño</p>
-                <span id="txt-bano-desc">Ducha con agua caliente</span>
-            </div>
-            <div class="item">
-                <i class="fas fa-utensils"></i>
-                <p id="txt-cocina">Cocina</p>
-                <span id="txt-cocina-desc">Uso compartido totalmente equipada</span>
-            </div>
-            <div class="item">
-                <i class="fas fa-laptop"></i>
-                <p id="txt-trabajo">Trabajo</p>
-                <span id="txt-trabajo-desc">Espacio cómodo y productivo</span>
-            </div>
-            <div class="item">
-                <i class="fas fa-shield-alt"></i>
-                <p id="txt-seguro">Seguro</p>
-                <span id="txt-seguro-desc">Cámaras y acceso controlado</span>
-            </div>
-            <div class="item">
-                <i class="fas fa-tv"></i>
-                <p id="txt-tv">TV</p>
-                <span id="txt-tv-desc">Zonas sociales con streaming</span>
-            </div>
+            <div class="item"><i class="fas fa-wifi"></i><p id="txt-wifi">Wifi</p><span id="txt-wifi-desc">Alta velocidad en todo el hostal</span></div>
+            <div class="item"><i class="fas fa-bath"></i><p id="txt-bano">Baño</p><span id="txt-bano-desc">Ducha con agua caliente</span></div>
+            <div class="item"><i class="fas fa-utensils"></i><p id="txt-cocina">Cocina</p><span id="txt-cocina-desc">Uso compartido totalmente equipada</span></div>
+            <div class="item"><i class="fas fa-laptop"></i><p id="txt-trabajo">Trabajo</p><span id="txt-trabajo-desc">Espacio cómodo y productivo</span></div>
+            <div class="item"><i class="fas fa-shield-alt"></i><p id="txt-seguro">Seguro</p><span id="txt-seguro-desc">Cámaras y acceso controlado</span></div>
+            <div class="item"><i class="fas fa-tv"></i><p id="txt-tv">TV</p><span id="txt-tv-desc">Zonas sociales con streaming</span></div>
         </div>
 
         <div class="bloque-final">
             <p id="txt-argumento">Para tu seguridad y confianza, gestionamos todas nuestras reservas de forma confiable a través de Airbnb.</p>
-            <a href="https://www.airbnb.com.co/users/profile/1470728514452495329" class="btn-airbnb" id="txt-btn-reserva">RESERVAR EN AIRBNB</a>
+            
+            <a href="https://www.airbnb.com.co/users/profile/1470728514452495329" target="_blank" class="btn-airbnb" id="txt-btn-reserva">RESERVAR EN AIRBNB</a>
 
             <p class="info-texto" id="txt-horario">🕒 Horario de atención: 7:00 AM - 10:00 PM</p>
             <p class="info-texto" id="txt-ubicacion">📍 Calle 65 #48 - 78, La Candelaria, Medellín</p>
 
+            <br>
+            <p class="info-texto" id="txt-extra-info">Para mayor información u otras reservas nos puedes escribir</p>
+
             <div class="social-bar">
-                <a href="https://www.facebook.com/hostalpacificoencanto/"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/pacificoencanto/"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.airbnb.com.co/rooms/1413201739688849287"><i class="fab fa-airbnb"></i></a>
+                <a href="https://www.facebook.com/hostalpacificoencanto/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/pacificoencanto/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.airbnb.com.co/rooms/1413201739688849287" target="_blank"><i class="fab fa-airbnb"></i></a>
             </div>
         </div>
     </div>
 
-    <a href="https://w.app/tmdxwn" class="btn-flotante whatsapp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://waze.com/ul/hd3478effp" class="btn-flotante waze"><i class="fab fa-waze"></i></a>
+    <a href="https://w.app/tmdxwn" target="_blank" class="btn-flotante whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://waze.com/ul/hd3478effp" target="_blank" class="btn-flotante waze"><i class="fab fa-waze"></i></a>
 
     <script>
         const translations = {
@@ -252,7 +212,8 @@
                 argumento: "Para tu seguridad y confianza, gestionamos todas nuestras reservas de forma confiable a través de Airbnb.",
                 btn_reserva: "RESERVAR EN AIRBNB",
                 horario: "🕒 Horario de atención: 7:00 AM - 10:00 PM",
-                ubicacion: "📍 Calle 65 #48 - 78, La Candelaria, Medellín"
+                ubicacion: "📍 Calle 65 #48 - 78, La Candelaria, Medellín",
+                extra_info: "Para mayor información u otras reservas nos puedes escribir"
             },
             en: {
                 servicios_titulo: "Our Services",
@@ -265,12 +226,12 @@
                 argumento: "For your safety and confidence, we manage all our reservations reliably through Airbnb.",
                 btn_reserva: "BOOK ON AIRBNB",
                 horario: "🕒 Service hours: 7:00 AM - 10:00 PM",
-                ubicacion: "📍 65th St #48 - 78, La Candelaria, Medellin"
+                ubicacion: "📍 65th St #48 - 78, La Candelaria, Medellin",
+                extra_info: "For more information or other reservations you can write to us"
             }
         };
 
         function setLanguage(lang) {
-            // Actualización de textos
             document.getElementById('txt-servicios-titulo').innerText = translations[lang].servicios_titulo;
             document.getElementById('txt-wifi').innerText = translations[lang].wifi;
             document.getElementById('txt-wifi-desc').innerText = translations[lang].wifi_desc;
@@ -288,8 +249,8 @@
             document.getElementById('txt-btn-reserva').innerText = translations[lang].btn_reserva;
             document.getElementById('txt-horario').innerText = translations[lang].horario;
             document.getElementById('txt-ubicacion').innerText = translations[lang].ubicacion;
+            document.getElementById('txt-extra-info').innerText = translations[lang].extra_info;
 
-            // Efecto visual de botones hundidos
             document.getElementById('btn-es').classList.remove('active');
             document.getElementById('btn-en').classList.remove('active');
             document.getElementById('btn-' + lang).classList.add('active');
